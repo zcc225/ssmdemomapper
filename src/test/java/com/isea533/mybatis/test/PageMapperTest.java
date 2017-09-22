@@ -26,8 +26,12 @@ package com.isea533.mybatis.test;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.isea533.mybatis.mapper.CountryMapper;
-import com.isea533.mybatis.model.Country;
+import com.zccpro.mapper.CountryMapper;
+import com.zccpro.mapper.TAccountsLogsMapper;
+import com.zccpro.model.Country;
+import com.zccpro.model.TAccountsLogs;
+import com.zccpro.service.TAccountsLogsServer;
+
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -43,21 +47,53 @@ public class PageMapperTest extends BasicTest {
 //    @Autowired
 //    private CountryMapper countryMapper;
 
-    @Autowired
-    private SqlSession sqlSession;
+//    @Autowired
+//    private SqlSession sqlSession;
 
+//	@Autowired
+//	private TAccountsLogsMapper tAccountsLogsMapper;
+//	
+	@Autowired
+	private TAccountsLogsServer tAccountsLogsServer;
+	
     @Test
     public void test(){
-        CountryMapper countryMapper = sqlSession.getMapper(CountryMapper.class);
-        Example example = new Example(Country.class);
-        example.createCriteria().andGreaterThan("id",100);
-        PageHelper.startPage(2,10);
-        List<Country> countries = countryMapper.selectByExample(example);
-        PageInfo<Country> pageInfo = new PageInfo<Country>(countries);
-        System.out.println(pageInfo.getTotal());
-
-        countries = countryMapper.selectByExample(example);
-        pageInfo = new PageInfo<Country>(countries);
-        System.out.println(pageInfo.getTotal());
+//        CountryMapper countryMapper = sqlSession.getMapper(CountryMapper.class);
+//        Example example = new Example(Country.class);
+//        example.createCriteria().andGreaterThan("id",100);
+//        PageHelper.startPage(2,10);
+//        List<Country> countries = countryMapper.selectByExample(example);
+//        PageInfo<Country> pageInfo = new PageInfo<Country>(countries);
+//        System.out.println(pageInfo.getTotal());
+//
+//        countries = countryMapper.selectByExample(example);
+//        pageInfo = new PageInfo<Country>(countries);
+//        System.out.println(pageInfo.getTotal());
+    	
+//    	Country country = new Country();
+//    	country.setId(100);
+//    	PageHelper.startPage(3,10);
+//    	List<Country> select = countryMapper.selectAll();
+//    	for (Country country2 : select) {
+//			System.out.println(country2.getCountrycode());
+//		}
+    	
+//    	TAccountsLogs tAccountsLogs = new TAccountsLogs();
+//    	tAccountsLogs.setId(1);
+//    	List<TAccountsLogs> select = tAccountsLogsMapper.select(tAccountsLogs);
+//    	PageHelper.startPage(1, 2);
+//    	List<TAccountsLogs> selectAll = tAccountsLogsMapper.selectAll();
+//    	for (TAccountsLogs tAccountsLogs2 : selectAll) {
+//    		System.out.println(tAccountsLogs2.getExt1());
+//    		
+//    	}
+    	Example example = new Example(TAccountsLogs.class);
+//    	tAccountsLogs.createCriteria().ad
+//    	example.createCriteria().andBetween("id", 0, 4);
+    	List<TAccountsLogs> selectByExample = tAccountsLogsServer.selectByExample(example);
+    	for (TAccountsLogs tAccountsLogs : selectByExample) {
+    		System.out.println(tAccountsLogs.getId());
+		}
+    	
     }
 }

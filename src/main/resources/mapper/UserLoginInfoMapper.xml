@@ -24,8 +24,8 @@
   -->
 
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.isea533.mybatis.mapper.UserLoginInfoMapper" >
-  <resultMap id="BaseResultMap" type="com.isea533.mybatis.model.UserLoginInfo" >
+<mapper namespace="com.zccpro.mapper.UserLoginInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.zccpro.model.UserLoginInfo" >
     <!--
       WARNING - @mbggenerated
     -->

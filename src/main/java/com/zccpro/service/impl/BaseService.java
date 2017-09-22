@@ -22,10 +22,12 @@
  * THE SOFTWARE.
  */
 
-package com.isea533.mybatis.service.impl;
+package com.zccpro.service.impl;
 
-import com.isea533.mybatis.service.IService;
 import org.springframework.beans.factory.annotation.Autowired;
+
+import com.zccpro.service.IService;
+
 import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;

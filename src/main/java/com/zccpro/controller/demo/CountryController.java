@@ -1,8 +1,9 @@
-package com.isea533.mybatis.controller.demo;
+package com.zccpro.controller.demo;
 
 import com.github.pagehelper.PageInfo;
-import com.isea533.mybatis.model.Country;
-import com.isea533.mybatis.service.CountryService;
+import com.zccpro.model.Country;
+import com.zccpro.service.CountryService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;

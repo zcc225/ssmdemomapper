@@ -1,4 +1,4 @@
-package com.isea533.mybatis.util;
+package com.zccpro.util;
 
 import tk.mybatis.mapper.common.Mapper;
 import tk.mybatis.mapper.common.MySqlMapper;

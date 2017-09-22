@@ -22,10 +22,29 @@
  * THE SOFTWARE.
  */
 
-package com.isea533.mybatis.mapper;
+package com.zccpro.service;
 
-import com.isea533.mybatis.model.UserInfo;
-import com.isea533.mybatis.util.MyMapper;
+import org.springframework.stereotype.Service;
 
-public interface UserInfoMapper extends MyMapper<UserInfo> {
+import java.util.List;
+
+/**
+ * 通用接口
+ */
+@Service
+public interface IService<T> {
+
+    T selectByKey(Object key);
+
+    int save(T entity);
+
+    int delete(Object key);
+
+    int updateAll(T entity);
+
+    int updateNotNull(T entity);
+
+    List<T> selectByExample(Object example);
+
+    //TODO 其他...
 }

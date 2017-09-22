@@ -14,8 +14,8 @@
         <!--  MyBatis Generator  -->
         <!--  Java接口和实体类  -->
         <targetJavaProject>${basedir}/src/main/java</targetJavaProject>
-        <targetMapperPackage>com.isea533.mybatis.mapper</targetMapperPackage>
-        <targetModelPackage>com.isea533.mybatis.model</targetModelPackage>
+        <targetMapperPackage>com.zccpro.mapper</targetMapperPackage>
+        <targetModelPackage>com.zccpro.model</targetModelPackage>
         <!--  XML生成路径  -->
         <targetResourcesProject>${basedir}/src/main/resources</targetResourcesProject>
         <targetXMLPackage>mapper</targetXMLPackage>

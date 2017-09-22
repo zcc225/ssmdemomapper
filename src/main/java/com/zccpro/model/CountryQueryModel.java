@@ -22,29 +22,41 @@
  * THE SOFTWARE.
  */
 
-package com.isea533.mybatis.service;
+package com.zccpro.model;
 
-import org.springframework.stereotype.Service;
+public class CountryQueryModel extends QueryModel {
 
-import java.util.List;
+    private Country country;
 
-/**
- * 通用接口
- */
-@Service
-public interface IService<T> {
+    public CountryQueryModel() {
+        this(new Country());
+    }
 
-    T selectByKey(Object key);
+    public CountryQueryModel(Country country) {
+        this.country = country;
+    }
 
-    int save(T entity);
+    public Integer getId() {
+        return country.getId();
+    }
 
-    int delete(Object key);
+    public void setId(Integer id) {
+        country.setId(id);
+    }
 
-    int updateAll(T entity);
+    public String getCountrycode() {
+        return country.getCountrycode();
+    }
 
-    int updateNotNull(T entity);
+    public void setCountrycode(String countrycode) {
+        country.setCountrycode(countrycode);
+    }
 
-    List<T> selectByExample(Object example);
+    public String getCountryname() {
+        return country.getCountryname();
+    }
 
-    //TODO 其他...
+    public void setCountryname(String countryname) {
+        country.setCountryname(countryname);
+    }
 }
