@@ -24,13 +24,13 @@
 
 package com.zccpro.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.zccpro.service.IService;
 
 import tk.mybatis.mapper.common.Mapper;
-
-import java.util.List;
 
 /**
  * Created by liuzh on 2014/12/11.
@@ -49,6 +49,11 @@ public abstract class BaseService<T> implements IService<T> {
         return mapper.selectByPrimaryKey(key);
     }
 
+    public T queryone(T obj) {
+        return mapper.selectOne(obj);
+    }
+
+    
     public int save(T entity) {
         return mapper.insert(entity);
     }
@@ -64,10 +69,15 @@ public abstract class BaseService<T> implements IService<T> {
     public int updateNotNull(T entity) {
         return mapper.updateByPrimaryKeySelective(entity);
     }
+    
+    public int updatrByExample(T entity,Object example){
+    	return mapper.updateByExampleSelective(entity, example);
+    }
 
     public List<T> selectByExample(Object example) {
         return mapper.selectByExample(example);
     }
+    
 
     //TODO 其他...
 }

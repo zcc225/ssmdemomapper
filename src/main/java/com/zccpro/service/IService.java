@@ -35,7 +35,9 @@ import java.util.List;
 public interface IService<T> {
 
     T selectByKey(Object key);
-
+    
+    T queryone(T entity);
+    
     int save(T entity);
 
     int delete(Object key);
@@ -43,6 +45,8 @@ public interface IService<T> {
     int updateAll(T entity);
 
     int updateNotNull(T entity);
+    
+    int updatrByExample(T entity,Object example);
 
     List<T> selectByExample(Object example);
 

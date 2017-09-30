@@ -22,10 +22,38 @@
  * THE SOFTWARE.
  */
 
-package com.zccpro.mapper;
+package com.zccpro.mybatis.test;
 
-import com.zccpro.model.UserInfo;
-import com.zccpro.util.MyMapper;
+import org.junit.Test;
+import org.springframework.beans.factory.annotation.Autowired;
 
-public interface UserInfoMapper extends MyMapper<UserInfo> {
+import com.zccpro.mapper.TestuserMapper;
+import com.zccpro.model.Testuser;
+import com.zccpro.service.TestuserService;
+
+/**
+ * 
+* @ClassName: PageMapperTest  
+* @author zhangchangchao  
+* @date 2017年9月30日 下午2:59:15  
+ */
+public class PageMapperTest extends BasicTest {
+
+	@Autowired
+	TestuserService testuserService;
+	@Autowired
+	TestuserMapper testuserMapper;
+	@Test
+	public void test(){
+		Testuser selectByPrimaryKey = testuserMapper.selectByPrimaryKey(1);
+		System.out.println(selectByPrimaryKey.getPassword());
+		
+	}
+	
+	@Test
+	public void test1(){
+		Testuser selectByKey = testuserService.selectByKey(1);
+		System.out.println(selectByKey.getPassword());
+	}
+	
 }
