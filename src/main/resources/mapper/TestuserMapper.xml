@@ -9,4 +9,19 @@
     <result column="username" property="username" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
   </resultMap>
+  
+  <insert id="insertUser" parameterType="com.zccpro.model.Testuser">  
+        <!--  
+            keyProperty：将查询出的主键设置到parameterType中的哪个属性上  
+            order：相对于sql语句的执行顺序  
+            resultType：指定返回值类型  
+            LAST_INSERT_ID()：获取ID函数  
+        -->  
+        INSERT INTO `test`.`testuser` (`id`, `username`, `password`) VALUES (#{id},#{username},#{password});
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">  
+           SELECT id FROM `test`.`testuser` ORDER BY id DESC LIMIT 0,1
+        </selectKey>  
+        
+        
+    </insert>  
 </mapper>
